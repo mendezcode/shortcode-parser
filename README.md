@@ -72,19 +72,23 @@ var out = shortcode.parse(str, {
 ### shortcode.add(name, callback)
 
 Adds a handler to the shortcode `name`. The handler receives `(str, params, data)`. When using an enclosing
-shortcode, `str` will contain the wrapped content (empty string if it's a self closing shortcode). The `params` object
-contains the parameters for to the shortcode. The `data` object is passed by `shortcode.parse()` if provided.
+shortcode, `str` will contain the wrapped content (empty string if it's a self closing shortcode).
+
+The `params` object contains the parameters for to the shortcode. The `data` object is passed by `shortcode.parse()` if provided.
 
 
 ### shortcode.remove(name)
 
 Removes a shortcode handler.
 
-### shortcode.parse(str, context, data)
+### shortcode.parse(str, data, context)
 
 Performs shortcode replacements on `str`. If `context` is specified, its methods will be used as shortcode handlers instead
 of the registered ones. The `data` parameter is optional and will be passed to all shortcode handlers.
 
+### shortcode.parseInContext(str, context, data)
+
+Same as `shortcode.parse` but with the second and third parameters swapped. Added for convenience and readability.
 
 
 ## License

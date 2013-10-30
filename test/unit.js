@@ -107,7 +107,7 @@ vows.describe("Shortcode Parser").addBatch({
     },
     
     'Renders using custom context': function() {
-      var out = shortcode.parse('This is [bold size=2em font="Helvetica"]Some Text[/bold] and [u upper]Some more Text[/u] and [u]Something[/u]...', {
+      var out = shortcode.parseInContext('This is [bold size=2em font="Helvetica"]Some Text[/bold] and [u upper]Some more Text[/u] and [u]Something[/u]...', {
         u: function(buf, opts) {
           if (opts.upper) buf = buf.toUpperCase();
           return util.format('<u>%s</u>', buf);
@@ -117,7 +117,7 @@ vows.describe("Shortcode Parser").addBatch({
     },
     
     'Provides data object to handlers': function() {
-      var out = shortcode.parse('... [data_test] ...', {
+      var out = shortcode.parseInContext('... [data_test] ...', {
         data_test: function(buf, params, data) {
           return '<!-- ' + JSON.stringify(data) + '-->'
         }

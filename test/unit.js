@@ -18,9 +18,7 @@ vows.describe("Shortcode Parser").addBatch({
     
     topic: function() {
       
-      var result = {};
-      
-      var inline, container, params_test, bold, infinite_loop_test;
+      var result = {}, inline, container, params_test, bold, infinite_loop_test;
       
       shortcode.add('inline', inline = function(buf, opts) {
         return util.format('<!-- inline/ buf: "%s" opts: %s -->', buf, JSON.stringify(opts));

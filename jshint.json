@@ -1,0 +1,38 @@
+{
+
+  "predef": [],
+
+  "bitwise": true,
+  "curly": false,
+  "eqeqeq": false,
+  "forin": false,
+  "immed": true,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": false,
+  "plusplus": false,
+  "regexp": false,
+  "undef": true,
+  "trailing": false,
+
+  "asi": true,
+  "eqnull": true,
+  "strict": false,
+  "funcscope": true,
+  "lastsemic": false,
+  "multistr": true,
+  "supernew": true,
+  "regexdash": false,
+  "laxbreak": true,
+  "expr": true,
+  "loopfunc": true,
+  "proto": true,
+
+  "devel": true,
+  "node": true,
+
+  "passfail": false
+
+}

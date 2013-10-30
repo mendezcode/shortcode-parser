@@ -1,0 +1,15 @@
+
+# Files to include
+
+myExtraIncludes = ".tm_properties,.gitignore,.travis.yml"
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include = "{$include,$myExtraIncludes}"
+
+# Files to exclude
+
+myExtraExcludes = "node_modules"
+myExtraExcludes = "$myExtraExcludes"
+
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
+excludeInBrowser      = "{$excludeInBrowser,$myExtraExcludes}"

@@ -116,6 +116,15 @@ vows.describe("Shortcode Parser").addBatch({
       assert.strictEqual(out, 'This is [bold size=2em font="Helvetica"]Some Text[/bold] and <u>SOME MORE TEXT</u> and <u>Something</u>...');
     },
     
+    'Provides data object to handlers': function() {
+      var out = shortcode.parse('... [data_test] ...', {
+        data_test: function(buf, params, data) {
+          return '<!-- ' + JSON.stringify(data) + '-->'
+        }
+      }, {user: 'john', blah: true});
+      assert.equal(out, '... <!-- {"user":"john","blah":true}--> ...');
+    },
+    
     'Avoids infinite loops': function() {
       var out = shortcode.parse('[infinite_loop_test]');
       assert.strictEqual(out, '<!-- infinite_loop_test / [infinite_loop_test] * [infinite_loop_test /] [infinite_loop_test][/infinite_loop_test] -->');

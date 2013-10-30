@@ -3,7 +3,7 @@ var fs = require('fs');
 var vows = require('vows');
 var util = require('util');
 var assert = require('assert');
-var shortcode = require('../src/shortcode-parser.js');
+var shortcode = require('../lib/shortcode-parser.js');
 
 var text = fs.readFileSync('test/fixtures/shortcodes.txt', 'utf8');
 

@@ -12,13 +12,23 @@ process.on('uncaughtException', function(err) {
   process.exit();
 });
 
+function TestObject() {
+  
+}
+
+TestObject.prototype.bold = function(buf, opts) {
+  return util.format('<strong style="font-size: %s; font-family: \'%s\',sans-serif;">%s</strong>', opts.size, opts.font, buf);
+},
+
 vows.describe("Shortcode Parser").addBatch({
   
   'Shortcode Handlers': {
     
     topic: function() {
       
-      var result = {}, inline, container, params_test, bold, infinite_loop_test;
+      var result = {}, inline, container, params_test;
+      
+      // Using add with single shortcode handler
       
       shortcode.add('inline', inline = function(buf, opts) {
         return util.format('<!-- inline/ buf: "%s" opts: %s -->', buf, JSON.stringify(opts));
@@ -51,20 +61,22 @@ vows.describe("Shortcode Parser").addBatch({
         
       });
       
-      shortcode.add('bold', bold = function(buf, opts) {
-        return util.format('<strong style="font-size: %s; font-family: \'%s\',sans-serif;">%s</strong>', opts.size, opts.font, buf);
-      });
+      // Using add with multiple shortcode handlers
       
-      shortcode.add('infinite_loop_test', infinite_loop_test = function(buf, opts) {
+      var ob = new TestObject(); // Provides the [bold] handler
+      
+      ob.infinite_loop_test = function(buf, opts) {
         return '<!-- infinite_loop_test / [infinite_loop_test] * [infinite_loop_test /] [infinite_loop_test][/infinite_loop_test] -->';
-      });
-
+      }
+      
+      shortcode.add(ob);
+      
       return {
         inline: inline,
         container: container,
         params_test: params_test,
-        bold: bold,
-        infinite_loop_test: infinite_loop_test
+        bold: ob.bold,
+        infinite_loop_test: ob.infinite_loop_test
       }
       
     },

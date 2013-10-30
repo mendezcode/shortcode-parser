@@ -117,12 +117,23 @@ vows.describe("Shortcode Parser").addBatch({
     },
     
     'Provides data object to handlers': function() {
-      var out = shortcode.parseInContext('... [data_test] ...', {
+      
+      var out, str = '... [data_test] ...';
+      
+      var context = {
         data_test: function(buf, params, data) {
           return '<!-- ' + JSON.stringify(data) + '-->'
         }
-      }, {user: 'john', blah: true});
+      }
+      
+      out = shortcode.parseInContext(str, context, {user: 'john', blah: true});
+
       assert.equal(out, '... <!-- {"user":"john","blah":true}--> ...');
+      
+      out = shortcode.parseInContext(str, context);
+      
+      assert.equal(out, '... <!-- {}--> ...'); // Ensure data is provided as object
+      
     },
     
     'Avoids infinite loops': function() {

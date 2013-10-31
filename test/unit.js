@@ -42,8 +42,8 @@ vows.describe("Shortcode Parser").addBatch({
         
         var types = {
           hello: (opts.hello === "world") ? util.format('string(%s)', opts.hello) : null,
-          foo: (opts.foo === 'a-b-c-d') ? util.format('string(%s)', opts.foo) : null,
-          name: (opts.name === 'john1234') ? util.format('string(%s)', opts.name) : null,
+          foo: (opts.foo === 'a-B-c-D') ? util.format('string(%s)', opts.foo) : null,
+          name: (opts.name === 'John1234') ? util.format('string(%s)', opts.name) : null,
           some: (opts.some === 'value') ? util.format('string(%s)', opts.some) : null,
           another: (opts.another === 'Lorem Ipsum Dolor Sit Amet') ? util.format('string(%s)', opts.another) : null,
           age: (opts.age === 30) ? util.format('number(%d)', opts.age) : null,

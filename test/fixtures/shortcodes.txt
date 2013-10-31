@@ -12,7 +12,7 @@
 
 # Block Level > Multiple Lines
 
-[container hello=world name=john age=30 float=55.5 slider=null boolean=true other=undefined]
+[container hello=world name=John age=30 float=55.5 slider=null boolean=true other=undefined]
 
  ... On different lines ...
 
@@ -27,7 +27,7 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offi
 
 # Parameters & Typecasting
 
-[params_test hello=world foo=a-b-c-d name=john1234 some='value' another="Lorem Ipsum Dolor Sit Amet" age=30 float=55.5 slider=null boolean=true other=undefined /]
+[params_test hello=world foo=a-B-c-D name=John1234 some='value' another="Lorem Ipsum Dolor Sit Amet" age=30 float=55.5 slider=null boolean=true other=undefined /]
 
 # Unrecognized Shortcodes
 

@@ -12,7 +12,7 @@
 
 # Block Level > Multiple Lines
 
-<!-- container opts: {"hello":"world","name":"john","age":30,"float":55.5,"slider":null,"boolean":true} -->
+<!-- container opts: {"hello":"world","name":"John","age":30,"float":55.5,"slider":null,"boolean":true} -->
 
  ... On different lines ...
 
@@ -27,7 +27,7 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offi
 
 # Parameters & Typecasting
 
-<!-- params_test / buf: "" opts: {"hello":"world","foo":"a-b-c-d","name":"john1234","some":"value","another":"Lorem Ipsum Dolor Sit Amet","age":30,"float":55.5,"slider":null,"boolean":true} types: {"hello":"string(world)","foo":"string(a-b-c-d)","name":"string(john1234)","some":"string(value)","another":"string(Lorem Ipsum Dolor Sit Amet)","age":"number(30)","float":"float(55.5)","slider":"null(null)","boolean":"boolean(true)","other":"undefined(undefined)"} -->
+<!-- params_test / buf: "" opts: {"hello":"world","foo":"a-B-c-D","name":"John1234","some":"value","another":"Lorem Ipsum Dolor Sit Amet","age":30,"float":55.5,"slider":null,"boolean":true} types: {"hello":"string(world)","foo":"string(a-B-c-D)","name":"string(John1234)","some":"string(value)","another":"string(Lorem Ipsum Dolor Sit Amet)","age":"number(30)","float":"float(55.5)","slider":"null(null)","boolean":"boolean(true)","other":"undefined(undefined)"} -->
 
 # Unrecognized Shortcodes
 

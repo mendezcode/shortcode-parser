@@ -102,8 +102,12 @@ vows.describe("Shortcode Parser").addBatch({
     },
     
     'Renders shortcodes property': function(buf) {
+      
+      // TODO: Add individual test cases to detect where parser breaks
+      
       var output = fs.readFileSync('test/fixtures/output.txt', 'utf8');
       assert.strictEqual(buf, output);
+
     },
     
     'Renders using custom context': function() {
@@ -118,10 +122,10 @@ vows.describe("Shortcode Parser").addBatch({
     
     'Provides data object to handlers': function() {
       
-      var out, str = '... [data_test] ...';
+      var out, str = '... [#data_test][/data_test] ...'; // NOTE: Testing ability to skip first char of shortcode tag
       
       var context = {
-        data_test: function(buf, params, data) {
+        '#data_test': function(buf, params, data) {
           return '<!-- ' + JSON.stringify(data) + '-->'
         }
       }

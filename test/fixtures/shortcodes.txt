@@ -6,15 +6,17 @@
 [inline alpha beta=false gamma one=true two=false three=true /]
 [inline foo=bar bar="baz" /]
 
-# Block Level > Multiple Lines
-
-[container hello=world name=john age=30 float=55.5 slider=null boolean=true other=undefined]
- ... On different lines ...
-[/container]
-
 # Block Level > Same Line
 
 [container] ... On the same line ... [/container]
+
+# Block Level > Multiple Lines
+
+[container hello=world name=john age=30 float=55.5 slider=null boolean=true other=undefined]
+
+ ... On different lines ...
+
+[/container]
 
 # Inline within content
 

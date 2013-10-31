@@ -6,15 +6,17 @@
 <!-- inline/ buf: "" opts: {"alpha":true,"beta":false,"gamma":true,"one":true,"two":false,"three":true} -->
 <!-- inline/ buf: "" opts: {"foo":"bar","bar":"baz"} -->
 
-# Block Level > Multiple Lines
-
-<!-- container opts: {"hello":"world","name":"john","age":30,"float":55.5,"slider":null,"boolean":true} -->
- ... On different lines ...
-<!-- /container -->
-
 # Block Level > Same Line
 
 <!-- container opts: {} --> ... On the same line ... <!-- /container -->
+
+# Block Level > Multiple Lines
+
+<!-- container opts: {"hello":"world","name":"john","age":30,"float":55.5,"slider":null,"boolean":true} -->
+
+ ... On different lines ...
+
+<!-- /container -->
 
 # Inline within content
 

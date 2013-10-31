@@ -35,7 +35,7 @@ vows.describe("Shortcode Parser").addBatch({
       });
       
       shortcode.add('container', container = function(buf, opts) {
-        return util.format('<!-- container opts: %s -->%s<!-- /container -->', JSON.stringify(opts), buf);
+        return util.format('<!-- container opts: %s -->\n%s\n<!-- /container -->', JSON.stringify(opts), buf);
       });
       
       shortcode.add('params_test', params_test = function(buf, opts) {

@@ -8,13 +8,15 @@
 
 # Block Level > Same Line
 
-<!-- container opts: {} --> ... On the same line ... <!-- /container -->
+<!-- container opts: {} -->
+ ... On the same line, spacing is adjusted ... 
+<!-- /container -->
 
 # Block Level > Multiple Lines
 
 <!-- container opts: {"hello":"world","name":"John","age":30,"float":55.5,"slider":null,"boolean":true} -->
 
- ... On different lines ...
+ ... On different lines, spacing is preserved ... 
 
 <!-- /container -->
 
@@ -38,9 +40,7 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offi
 [12345]
 [some_shortcode] [/some_shortcode]
 
-# Nested Block Levels Not Supported
-
-<!-- container opts: {} --> Nested Block Level Shortcodes <!-- container opts: {} --><!-- /container --> Not <!-- /container --> Supported [/container]
+#
 
 Lorem ipsum dolor sit amet, <strong style="font-size: 10px; font-family: 'Inconsolata',sans-serif;">Hello World</strong> adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

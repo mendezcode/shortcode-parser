@@ -85,6 +85,10 @@ vows.describe("Shortcode Parser").addBatch({
       assert.deepEqual(val, shortcode._shortcodes);
     },
     
+    "Has shortcode handlers": function(val){
+      for (var k in val) assert(shortcode.has(k));
+    },
+
     "Removes shortcode handlers": function(val) {
       var noop = function() {};
       shortcode.add('test', noop);

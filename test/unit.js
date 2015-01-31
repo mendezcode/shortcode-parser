@@ -119,7 +119,24 @@ vows.describe("Shortcode Parser").addBatch({
       });
       assert.strictEqual(out, 'This is [bold size=2em font="Helvetica"]Some Text[/bold] and <u>SOME MORE TEXT</u> and <u>Something</u>...');
     },
-    
+    'Able to change shortcode tags': function() {
+      // Set short code tags to {{ and }}
+      shortcode.setTags('{{', '}}');
+
+      var out, str = '... {{#data_test}}{{/data_test}} ...';
+      var context = {
+        '#data_test' : function(buf, params, data) {
+          return '<!-- ' + JSON.stringify(data) + '-->';
+        }
+      }
+      out = shortcode.parseInContext(str, context, {user: 'john', blah: true});
+
+      assert.equal(out, '... <!-- {"user":"john","blah":true}--> ...');
+
+      out = shortcode.parseInContext(str,context);
+
+      assert.equal(out, '... <!-- {}--> ...'); // Ensure data is provided as object;
+    },
     'Provides data object to handlers': function() {
       
       var out, str = '... [#data_test][/data_test] ...'; // NOTE: Testing ability to skip first char of shortcode tag

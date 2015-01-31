@@ -66,8 +66,17 @@ var out = shortcode.parse(str, {
 });
 ```
 
+Configuring shortcode tags:
+
+```javascript
+shortcode.setTags('{{', '}}');
+```
 
 ## API
+
+### shortcode.setTags(open, close)
+
+Changes the shortcode open and close tags to the values passed in.
 
 ### shortcode.add(name, callback)
 
